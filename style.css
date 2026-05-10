@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff0f5;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* pages */
+.page {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  display: flex;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* gift */
+#gift {
+  font-size: 110px;
+  position: relative;
+  cursor: pointer;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+#lid {
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  font-size: 45px;
+  transition: 0.5s;
+}
+
+/* shake effect */
+.shake {
+  animation: shake 0.6s linear 3;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-15px); }
+  50% { transform: translateX(15px); }
+  75% { transform: translateX(-15px); }
+  100% { transform: translateX(0); }
+}
+
+/* lid burst */
+.open #lid {
+  transform: translateY(-100px) rotate(25deg);
+  opacity: 0;
+}
+
+/* floating hearts background */
+#hearts-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* falling hearts */
+.heart {
+  position: absolute;
+  color: #ff4d6d;
+  font-size: 20px;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10%); opacity: 1; }
+  to { transform: translateY(110vh); opacity: 0; }
+}
+
+/* text */
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 85%;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* heart button */
+.heart-btn {
+  margin-top: 25px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.heart-btn:active {
+  transform: scale(0.8);
+}
